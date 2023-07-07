@@ -5,7 +5,6 @@ Created on Mon Jun 27 2018
 
 @author: longang
 """
-
 get_ipython().magic(u'load_ext autoreload')
 get_ipython().magic(u'autoreload 2')
 
@@ -25,10 +24,11 @@ sys.path.append(cur_dir)
 os.environ['PYTHONHASHSEED'] = '0'
 np.random.seed(42)
 rn.seed(12345)
-session_conf = tf.ConfigProto(intra_op_parallelism_threads=1, inter_op_parallelism_threads=1)
-from keras import backend as K
-tf.set_random_seed(1234)
-sess = tf.Session(graph=tf.get_default_graph(), config=session_conf)
+session_conf = tf.compat.v1.ConfigProto(intra_op_parallelism_threads=1, inter_op_parallelism_threads=1)
+#from keras import backend as K
+from tensorflow.python.keras import backend as K
+tf.random.set_seed(1234)
+sess = tf.compat.v1.Session(graph=tf.compat.v1.get_default_graph(), config=session_conf)
 K.set_session(sess)
 
 import keras, glob

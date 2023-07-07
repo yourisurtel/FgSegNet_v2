@@ -9,8 +9,9 @@ Created on Mon Jun 27 2018
 import keras
 from keras.models import Model
 from keras.layers import Input, Dropout, Activation, SpatialDropout2D
-from keras.layers.convolutional import Conv2D, Cropping2D, UpSampling2D
-from keras.layers.pooling import MaxPooling2D, GlobalAveragePooling2D
+#from keras.layers.convolutional import Conv2D, Cropping2D, UpSampling2D
+from keras.layers import LSTM
+from tensorflow.keras.layers import MaxPooling2D, GlobalAveragePooling2D
 from keras.layers import concatenate, add, multiply
 from my_upsampling_2d import MyUpSampling2D
 from instance_normalization import InstanceNormalization

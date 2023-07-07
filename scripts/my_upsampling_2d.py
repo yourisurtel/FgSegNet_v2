@@ -6,9 +6,12 @@ Created on Mon Aug  6 15:20:23 2018
 @author: longang
 """
 import keras
+import tensorflow
 from keras import backend as K
-from keras.engine.topology import Layer
-from keras.utils import conv_utils
+#from keras.engine.topology import Layer
+from tensorflow.keras.layers import Layer
+#from keras.utils import conv_utils
+from tensorflow.python.keras.utils import conv_utils
 from keras.legacy import interfaces
 
 # version 2.1.x has now base_layer class, so we need to import
